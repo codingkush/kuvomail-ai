@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+ body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif !important;;
+  background-color: #171528;
+}
+
+.app-container {
+  /* background-color: #1e1b2e; */
+  border-radius: 20px;
+  padding: 32px;
+  margin-top: 40px;
+}
+
+
+
+.header-text {
+  color: #e0e0ff;
+  text-align: center;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #7c4dff; 
+  margin-bottom: 16px; 
+  font-size: 2.5rem;
+}
+
+.tagline-text {
+  color: #e0e0ff;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 4px;
+  margin-bottom: 24px;
+  font-size: 1.3rem;
+}
+
+
+.input-section {
+  margin: 24px;
+}
+
+.email-input .MuiInputBase-root {
+  background-color: #2a2740;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.email-input label {
+  color: #b39ddb;
+}
+
+.email-input .MuiOutlinedInput-root fieldset {
+  border-color: #7e57c2;
+}
+
+
+.email-input .MuiOutlinedInput-root:hover fieldset {
+  border-color: #9575cd;
+}
+
+.email-input .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #b388ff;
+  /* border-color: #ff8888; */
+}
+
+.tone-select label {
+  color: #b39ddb;
+}
+
+.select-box .MuiInputBase-root {
+  background-color: #2a2740;
+  color: white !important;
+}
+
+
+.select-box .MuiSelect-select {
+  color: white !important;
+  font-size: 1.1rem !important;
+}
+
+
+.select-box .MuiOutlinedInput-notchedOutline {
+  border-color: #7e57c2;
+}
+
+.select-box:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #9575cd !important;
+}
+
+
+.select-box.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #b388ff !important;
+}
+
+
+.MuiMenu-paper {
+  background: linear-gradient(135deg, #494b9f, #401967) !important;
+  color: white !important;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(120, 100, 180, 0.3);
+}
+
+.MuiMenuItem-root:hover {
+  background: linear-gradient(135deg, #6a1b9a, #512da8) !important;
+  color: white !important;
+  border-radius: 4px;
+}
+
+.Mui-selected {
+  background: linear-gradient(135deg, #8e7bae, #6734be) !important;
+  color: white !important;
+}
+
+
+.generate-button {
+  margin-top: 12px;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #511ad1, #d14daa) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 10px rgba(107, 34, 138, 0.7);
+}
+
+.generate-button:hover {
+  background: linear-gradient(135deg, #d14daa, #511ad1) !important;
+  box-shadow: 
+    0 6px 10px rgba(12, 31, 105, 0.9);
+  color: white !important;
+  cursor: pointer;
+}
+
+
+.reply-box {
+  margin-top: 24px;
+  background-color: #2e2a4b;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(120, 120, 200, 0.2);
+}
+
+.reply-title {
+  color: #e0e0ff;
+}
+
+.reply-content .MuiInputBase-root {
+  background-color: #1c1c2e;
+  color: white;
+}
+
+
+.reply-content .MuiOutlinedInput-root fieldset {
+  border-color: #7e57c2;
+}
+
+.reply-content .MuiOutlinedInput-root:hover fieldset {
+  border-color: #9575cd;
+}
+
+
+.reply-content .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #b388ff;
+}
+
+.copy-button {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 114, 255, 0.4);
+
+}
+
+.copy-button:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff) !important;
+  box-shadow: 0 6px 24px rgba(0, 114, 255, 0.6);
+  color: white !important;
+}
+
+
+
+.footer {
+  margin-top: 80px;
+  padding: 16px 0;
+  text-align: center;
+  color: #9b78ff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none;
+}
+
