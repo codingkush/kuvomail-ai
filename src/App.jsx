@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import React from "react";
-import "./App.css"; 
+import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -36,7 +36,7 @@ function App() {
     setError("");
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/email/generate",
+        import.meta.env.VITE_API_URL,
         {
           emailContent,
           tone,
@@ -61,107 +61,107 @@ function App() {
   return (
 
 
-     <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
 
-    <>
-      <Container maxWidth="md" className="app-container">
-        <Typography
-          variant="h3"
-          component="h1"
-          gutterBottom
-          className="header-text"
-        >
-          KuvoMail AI
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          className="tagline-text"
-        >
-         Reply with precision.
-        </Typography>
-
-        <Box className="input-section">
-          <TextField
-            fullWidth
-            multiline
-            rows={6}
-            variant="outlined"
-            label="Original Email Content"
-            value={emailContent || ""}
-            onChange={(e) => setEmailContent(e.target.value)}
-            className="email-input"
-          />
-
-          <FormControl fullWidth className="tone-select" sx={{ mt: 3 }}>
-            <InputLabel className="input-label">Tone (optional)</InputLabel>
-            <Select
-              value={tone || ""}
-              label="Tone (Optional)"
-              onChange={(e) => setTone(e.target.value)}
-              className="select-box"
-            >
-              <MenuItem value="">None</MenuItem>
-              <MenuItem value="professional">Professional</MenuItem>
-              <MenuItem value="casual">Casual</MenuItem>
-              <MenuItem value="friendly">Friendly</MenuItem>
-            </Select>
-          </FormControl>
-
-          <Button
-            onClick={handleSubmit}
-            disabled={!emailContent || loading}
-            fullWidth
-            className="generate-button"
-            sx={{ mt: 3 }}
+      <>
+        <Container maxWidth="md" className="app-container">
+          <Typography
+            variant="h3"
+            component="h1"
+            gutterBottom
+            className="header-text"
           >
-            {loading ? (
-              <CircularProgress size={24} sx={{ color: "white" }} />
-            ) : (
-              "Generate Reply"
-            )}
-          </Button>
-        </Box>
-
-        {error && (
-          <Typography color="error" sx={{ mb: 2, mt: 2 }}>
-            {error}
+            KuvoMail AI
           </Typography>
-        )}
+          <Typography
+            variant="subtitle1"
+            className="tagline-text"
+          >
+            Reply with precision.
+          </Typography>
 
-        {generatedReply && (
-          <Box className="reply-box" sx={{ mt: 4 }}>
-            <Typography variant="h6" gutterBottom className="reply-title">
-              Generated Reply:
-            </Typography>
+          <Box className="input-section">
             <TextField
               fullWidth
               multiline
               rows={6}
               variant="outlined"
-              value={generatedReply || ""}
-              inputProps={{ readOnly: true }}
-              className="reply-content"
+              label="Original Email Content"
+              value={emailContent || ""}
+              onChange={(e) => setEmailContent(e.target.value)}
+              className="email-input"
             />
 
+            <FormControl fullWidth className="tone-select" sx={{ mt: 3 }}>
+              <InputLabel className="input-label">Tone (optional)</InputLabel>
+              <Select
+                value={tone || ""}
+                label="Tone (Optional)"
+                onChange={(e) => setTone(e.target.value)}
+                className="select-box"
+              >
+                <MenuItem value="">None</MenuItem>
+                <MenuItem value="professional">Professional</MenuItem>
+                <MenuItem value="casual">Casual</MenuItem>
+                <MenuItem value="friendly">Friendly</MenuItem>
+              </Select>
+            </FormControl>
+
             <Button
-              variant="outlined"
-              className="copy-button"
-              sx={{ mt: 2 }}
-              onClick={() => navigator.clipboard.writeText(generatedReply)}
+              onClick={handleSubmit}
+              disabled={!emailContent || loading}
+              fullWidth
+              className="generate-button"
+              sx={{ mt: 3 }}
             >
-              Copy to Clipboard
+              {loading ? (
+                <CircularProgress size={24} sx={{ color: "white" }} />
+              ) : (
+                "Generate Reply"
+              )}
             </Button>
           </Box>
-        )}
-      </Container>
+
+          {error && (
+            <Typography color="error" sx={{ mb: 2, mt: 2 }}>
+              {error}
+            </Typography>
+          )}
+
+          {generatedReply && (
+            <Box className="reply-box" sx={{ mt: 4 }}>
+              <Typography variant="h6" gutterBottom className="reply-title">
+                Generated Reply:
+              </Typography>
+              <TextField
+                fullWidth
+                multiline
+                rows={6}
+                variant="outlined"
+                value={generatedReply || ""}
+                inputProps={{ readOnly: true }}
+                className="reply-content"
+              />
+
+              <Button
+                variant="outlined"
+                className="copy-button"
+                sx={{ mt: 2 }}
+                onClick={() => navigator.clipboard.writeText(generatedReply)}
+              >
+                Copy to Clipboard
+              </Button>
+            </Box>
+          )}
+        </Container>
 
 
-      <Box component="footer" className="footer">
-        © {currentYear} — Kush Gupta. Crafted with 💜 using React (frontend) and SpringBoot (backend).
-      </Box>
-    </>
+        <Box component="footer" className="footer">
+          © {currentYear} — Kush Gupta. Crafted with 💜 using React (frontend) and SpringBoot (backend).
+        </Box>
+      </>
 
-</ThemeProvider>
+    </ThemeProvider>
   );
 }
 
